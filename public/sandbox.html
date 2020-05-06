@@ -1,0 +1,13 @@
+tableCart.innerHTML += '<td id="col-img-'+index+'"><img src="'+data.imageUrl+'" alt="'+data.name+'" width="100px"></td><td id="col-name-'+index+'">'+data.name+'</td><td id="col-qt-'+i+'">'+qty+'</td><td id="col-price-'+index+'">'+prix_calcul+' €</td><td><div class="link_svg" id="btns-'+index+'"></div></td></tr>';
+            
+// addEventtListeners is not down
+var btns = document.getElementById("btns-"+index);
+
+var minus_html = '<a data-id="'+data._id+'" id="decrease_item"><img src="../static/svg/minus-circle.svg" alt="+"></a>';
+btns.insertAdjacentHTML('beforeEnd', minus_html);
+
+var plus_html = '<a data-id="'+data._id+'" id="increase_item"><img src="../static/svg/plus-circle.svg" alt="-"></a>';
+btns.insertAdjacentHTML('beforeEnd', plus_html);
+
+
+btns.insertAdjacentHTML('beforeEnd', rmv_html);

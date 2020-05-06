@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produit</title>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="main_container">
+            <div id="header_content">
+                <a href="/">
+                    <img src="../static/img/logo_orinoco.png" alt="Orinoco_logo">
+                </a>
+                <a href="../panier/">
+                    <div class="link_svg">
+                        <img src="../static/svg/shopping-bag.svg" alt="">
+                        <span>Panier</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main_container pt-20">
+        
+        <a href="javascript:history.back()">
+            <div class="link_svg">
+                <img src="../static/svg/chevrons-left.svg" alt="" style="margin-top: 5px;"> 
+                <span>Retour</span>
+            </div>
+        </a>
+
+        <div id="product__container">
+
+            <div id="product__img"></div>
+
+            <div id="product__details">
+                <h2 id="details__name"></h2>
+                <p id="details__desc"></p>
+                <hr>
+                <label for="colors">Personnalisation : &nbsp;</label>
+
+
+                <select name="colors" id="colors"></select>
+
+                
+                <div id="details__achat">
+                    <p id="details__price"></p>
+                    <button class="button btn-add-cart" id="add_cart">Ajouter au panier</button>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> 
+    <script src="../static/js/product.js"></script>
+</body>
+</html>
