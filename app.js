@@ -44,7 +44,7 @@ app.get('/',function(req,res) {
 });
 
 app.get('/products/',function(req,res) {
-  res.sendFile(path.join(__dirname + '/public/product.html'));
+  res.sendFile(path.join(__dirname + '/public/showProduct.html'));
 });
 
 app.get('/panier',function(req,res) {
