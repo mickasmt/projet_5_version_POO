@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Panier - Orinoco</title>
+        
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="main_container">
+                <div id="header_content">
+                    <a href="/">
+                        <img src="../static/img/logo_orinoco.png" alt="Orinoco_logo">
+                    </a>
+                    <a href="#">
+                        <div class="link_svg">
+                            <img src="../static/svg/shopping-bag.svg" alt="">
+                            <span>Panier</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main_container">
+            <div id="shopping__container">
+
+                <div id="items_cart">
+                    <h3 class="title_shopping">Votre panier</h3>
+                    <hr>
+
+                    <!-- List items in cart -->
+                    <table id="listing_cart">
+                        <tr>
+                            <th class="img_cart">Image</th>
+                            <th>Article</th>
+                            <th>Prix</th>
+                            <th>Quantité</th>
+                            <th>Supprimer</th>
+                        </tr>
+                    </table>
+                                    
+                    <div id="details__achat">
+                        <button class="button btn-remove-cart" id="remove_cart">Vider le panier</button>
+                        <p id="total__price"></p>
+                    </div>
+                </div>
+
+                <div class="form_container pt-20 pb-20">
+                    <h3 class="title_shopping">Finaliser votre commande</h3>
+                    <p>Remplissez le formulaire ci-dessous pour recevoir votre commande</p>
+
+                    <form class="form" id="form_order" name="formOrder">
+                        <div class="row_form">
+                            <div class="form_group">
+                                <label for="surname">Nom</label>
+                                <input type="text" id="surname" placeholder="Votre nom">
+                            </div>
+                            <div class="form_group">
+                                <label for="name">Prénom</label>
+                                <input type="text" id="name" placeholder="Votre prénom">
+                            </div>
+                        </div>
+                        
+                        <div class="row_form">
+                            <div class="form_group">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" placeholder="votre.adresse@mail.fr">                            
+                            </div>
+                            <div class="form_group">
+                                <label for="city">Ville</label>
+                                <input type="text" id="city" placeholder="Limoges, Paris, Lyon...">
+                            </div>
+                        </div>
+                    
+                        <label for="address">Adresse</label>
+                        <input type="text" id="address" name="address" placeholder="15 Avenue de la République">
+                    
+            
+                        <input id="submitForm" type="submit" value="Valider la commande">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        
+
+        <!-- Sweet Alert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <!-- Classes -->
+        <script src="../static/js/classes/Product.js"></script>
+        <script src="../static/js/classes/Cart.js"></script>
+        <script src="../static/js/classes/Ui.js"></script>
+        <script src="../static/js/classes/User.js"></script>
+        <!-- Main script for this page -->
+        <script src="../static/js/showCart.js"></script>
+    </body>
+</html>

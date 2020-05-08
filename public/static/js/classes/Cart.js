@@ -49,15 +49,99 @@ class Cart {
         return false;
     }
     
-    // Increment quantity 
+    // Increment quantity (for page "showProduct.html")
     incrementQty(currentCart, index) {
         var updateCart = currentCart;
         var qty = currentCart.items[index].quantity;
     
         qty++;
-    
+
         updateCart.items[index].quantity = qty;
-        
+
         window.localStorage.setItem('CART', JSON.stringify(updateCart));
+    }
+
+    // Update quantity for one item in cart local storage
+    updateQuantity(index, quantite) {
+        var oldCart = JSON.parse(window.localStorage.getItem('CART'));
+
+        // Update quantity with id
+        oldCart.items[index].quantity = quantite;
+
+        // update cart in local storage
+        window.localStorage.setItem('CART', JSON.stringify(oldCart));
+    }
+
+    // Delete one item in cart local storage if quantity = 0
+    removeItemInCart(index) {
+        // get the old cart for to update
+        var oldCart = JSON.parse(window.localStorage.getItem('CART'));
+
+        // Delete item with index
+        oldCart.items.splice(index, 1);
+        
+        // update cart in local storage
+        window.localStorage.setItem('CART', JSON.stringify(oldCart));
+
+        // get the new cart for to display
+        var newCart = JSON.parse(window.localStorage.getItem('CART'));
+    }
+
+    // Confirmation order for the current cart
+    confirmationOrder(data) {
+        var cart = JSON.parse(window.localStorage.getItem('CART'));
+        
+        if(cart) {
+            if(Array.isArray(cart.items) && cart.items.length) {
+        
+                var products_id = [];
+                var sum_price = 0;
+        
+                // Creation du products_id && Calcul prix total
+                for(var i = 0; i < cart.items.length; i++) {
+                    products_id.push(cart.items[i].id);
+            
+                    var prix_item = cart.items[i].price * cart.items[i].quantity;
+                    sum_price += prix_item;
+                }
+        
+                // post body data 
+                var data = {
+                    contact: data, 
+                    products: products_id
+                };
+        
+                // create request object
+                const request = new Request('../api/teddies/order', {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: new Headers({
+                        'Content-Type': 'application/json'
+                    })
+                });
+        
+                // pass request object to `fetch()`
+                fetch(request)
+                    .then(res => res.json())
+                    .then(res => this.infosOrder(res, sum_price)); // ajoute infos dans session storage
+        
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+          return false;
+        }
+    }
+
+    // ajoute infos sur la commande dedans la session storage
+    infosOrder(response, priceTotal) {        
+        // add order infos in session storage 
+        var commande = {
+            order_id: response.orderId,
+            total_price: priceTotal
+        };
+    
+        window.sessionStorage.setItem('ORDER', JSON.stringify(commande));
     }
 }

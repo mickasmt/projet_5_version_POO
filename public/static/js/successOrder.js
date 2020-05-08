@@ -1,20 +1,13 @@
-
 var orderContainer = document.getElementById('order_container');
-
 var commande = JSON.parse(window.sessionStorage.getItem('ORDER'));
+
+// Declare Ui class
+const ui = new Ui();
 
 if(commande) {
     console.log(commande);
     
-    // Show Popup Success
-    Swal.fire({
-        position: 'top',
-        toast: true,
-        icon: 'success',
-        title: 'Félicitation ! Votre commande est en cours de préparation !',
-        showConfirmButton: false,
-        timer: 2500
-    });
+    ui.successOrder();
     
     // get element by id for to display order infos
     var numCommande = document.getElementById('num_order');

@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmation de la commande - Orinoco</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Confirmation de la commande - Orinoco</title>
 
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
-<body>
-    <header>
-        <div class="main_container">
-            <div id="header_content">
-                <a href="/">
-                    <img src="../static/img/logo_orinoco.png" alt="Orinoco_logo">
-                </a>
-                <a href="../panier/">
-                    <div class="link_svg">
-                        <img src="../static/svg/shopping-bag.svg" alt="">
-                        <span>Panier</span>
-                    </div>
-                </a>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="main_container">
+                <div id="header_content">
+                    <a href="/">
+                        <img src="../static/img/logo_orinoco.png" alt="Orinoco_logo">
+                    </a>
+                    <a href="../panier/">
+                        <div class="link_svg">
+                            <img src="../static/svg/shopping-bag.svg" alt="">
+                            <span>Panier</span>
+                        </div>
+                    </a>
+                </div>
             </div>
+        </header>
+
+        <div class="main_container pt-20" id="order_container">
+            <h2 class="title__list">Confirmation de votre commande !</h2>
+            <p>L'équipe d'Oricono vous remercie d'avoir votre commande sur son site.</p>
+            <hr>
+
+            <h3 class="pt-20">Informations sur votre commande :</h3>
+            <p id="num_order"></p>
+            <p id="prix_total"></p>
+
+            <br>
+            <h4><i>A la prochaine pour une nouvelle commande !</i></h4>
         </div>
-    </header>
 
-    <div class="main_container pt-20" id="order_container">
-        <h2 class="title__list">Confirmation de votre commande !</h2>
-        <p>L'équipe d'Oricono vous remercie d'avoir votre commande sur son site.</p>
-        <hr>
-
-        <h3 class="pt-20">Informations sur votre commande :</h3>
-        <p id="num_order"></p>
-        <p id="prix_total"></p>
-
-        <br>
-        <h4><i>A la prochaine pour une nouvelle commande !</i></h4>
-    </div>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> 
-    <script src="../static/js/successOrder.js"></script>
-</body>
+        <!-- Sweet Alert -->
+        <script async src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <!-- Classes -->
+        <script src="../static/js/classes/Ui.js"></script>
+        <!-- Main script for this page -->
+        <script src="../static/js/successOrder.js"></script>
+    </body>
 </html>

@@ -48,7 +48,7 @@ app.get('/products/',function(req,res) {
 });
 
 app.get('/panier',function(req,res) {
-  res.sendFile(path.join(__dirname + '/public/shoppingCart.html'));
+  res.sendFile(path.join(__dirname + '/public/showCart.html'));
 });
 
 app.get('/confirmation',function(req,res) {
