@@ -3,7 +3,7 @@ class Ui {
     displayItems(data, container) {
         const items = data.map(item => `
             <div class="item">
-                <a href="/products/?item=teddies&id=${item._id}">
+                <a href="/products?id=${item._id}">
                     <img class="item__img" src="${item.imageUrl}" alt="${item.name}">
                     <div class="item__desc">
                         <span>${item.name}</span>
