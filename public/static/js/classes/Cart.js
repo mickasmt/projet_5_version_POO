@@ -82,9 +82,6 @@ class Cart {
         
         // update cart in local storage
         window.localStorage.setItem('CART', JSON.stringify(oldCart));
-
-        // get the new cart for to display
-        var newCart = JSON.parse(window.localStorage.getItem('CART'));
     }
 
     // Confirmation order for the current cart

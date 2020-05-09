@@ -66,6 +66,9 @@ function quantity_Item() {
   } else {
     // Remove item in cart for quantity = 0
     cart.removeItemInCart(index);
+
+    // get the new cart for to display
+    var newCart = JSON.parse(window.localStorage.getItem('CART'));
     
     if(Array.isArray(newCart.items) && newCart.items.length) {
       ui.displayHtmlCart(tableCart, totalCart);
