@@ -84,6 +84,17 @@ class Cart {
         window.localStorage.setItem('CART', JSON.stringify(oldCart));
     }
 
+    // ajoute infos sur la commande dedans la session storage
+    infosOrder(response, priceTotal) {        
+        // add order infos in session storage 
+        var commande = {
+            order_id: response.orderId,
+            total_price: priceTotal
+        };
+    
+        window.sessionStorage.setItem('ORDER', JSON.stringify(commande));
+    }
+
     // Confirmation order for the current cart
     confirmationOrder(data) {
         var cart = JSON.parse(window.localStorage.getItem('CART'));
@@ -121,24 +132,14 @@ class Cart {
                 fetch(request)
                     .then(res => res.json())
                     .then(res => this.infosOrder(res, sum_price)); // ajoute infos dans session storage
-        
+                
+                
                 return true;
             } else {
                 return false;
             }
         } else {
-          return false;
+            return false;
         }
-    }
-
-    // ajoute infos sur la commande dedans la session storage
-    infosOrder(response, priceTotal) {        
-        // add order infos in session storage 
-        var commande = {
-            order_id: response.orderId,
-            total_price: priceTotal
-        };
-    
-        window.sessionStorage.setItem('ORDER', JSON.stringify(commande));
     }
 }

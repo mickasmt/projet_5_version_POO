@@ -4,7 +4,7 @@ class Product {
     async getTeddies() {
         try {
             let response = await fetch(url);
-            let data = await response.json()
+            let data = await response.json();
             return data;            
         } catch (error) {
             console.log(error);
@@ -14,7 +14,7 @@ class Product {
     async getTeddyById(id) {
         try {
             let response = await fetch(url+"/"+id);
-            let data = await response.json()
+            let data = await response.json();
             return data;
         } catch (error) {
             console.log(error);

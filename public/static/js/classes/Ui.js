@@ -78,7 +78,7 @@ class Ui {
         element.classList.remove("input-success");
         element.classList.add("input-error");
     }
-      
+
     // Change style if success
     styleSuccess(element) {
         element.classList.remove("input-error");
@@ -96,6 +96,8 @@ class Ui {
         tableContainer.innerHTML = 'Panier Vide';
         totalContainer.innerHTML = '';
     }
+
+    
     // ------------------------------------------
     //  UI For Sweet Alert
     // ------------------------------------------
@@ -150,7 +152,7 @@ class Ui {
     }
 
     // Show alert error for the form
-    showErrorForm(){
+    showErrorForm() {
         swal.fire({
             position: 'top',
             toast: true,
@@ -162,7 +164,7 @@ class Ui {
     }
 
     // Show alert if cart is empty
-    cartEmpty(){
+    cartEmpty() {
         swal.fire({
             position: 'top',
             toast: true,

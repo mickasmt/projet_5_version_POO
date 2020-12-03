@@ -19,13 +19,13 @@ showListItems();
 //  FUNCTIONS
 // ------------------------------------------
 
-// list all items in showCart
+// List all items in showCart
 function showListItems() {
   var CART = JSON.parse(window.localStorage.getItem('CART'));
   var sum = 0;
   
   if(CART) {
-    if(Array.isArray(CART.items) && CART.items.length) {
+    if(Array.isArray(CART.items) && CART.items.length > 0) {
       var cartLength = CART.items.length;
     
       for(var i = 0; i < cartLength; i++) {
@@ -79,7 +79,7 @@ function quantity_Item() {
   }
 }
 
-// supprime l'article du panier
+// Supprime l'article du panier
 function remove_Item() {
   cart.removeItemInCart(this.id);
 
